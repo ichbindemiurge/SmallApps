@@ -31,7 +31,7 @@ public class ArrayClass {
             for(int j = i+1; j <= arr.length-1; j++){
                 if(j!=i && arr[i] == arr[j]){
                     count++;
-                    System.out.println("ELEMENT: " + arr[j] + " REPEATED: " + count+1);
+                    System.out.println("ELEMENT: " + arr[j] + " REPEATED: " + count);
                 } else {
                     count=0;
                 }
