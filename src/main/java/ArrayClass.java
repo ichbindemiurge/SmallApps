@@ -10,6 +10,7 @@ public class ArrayClass {
         - prints every item that is contained in the array more than once and the number of it's occurences
         - also accepts a size and splits the array into sub-arrays of that size
      */
+
     public static void reverseArray(int[] arr){
         System.out.println("This is normal array:" );
         for(int i = 0; i <= arr.length - 1; ++i){
@@ -30,7 +31,7 @@ public class ArrayClass {
             for(int j = i+1; j <= arr.length-1; j++){
                 if(j!=i && arr[i] == arr[j]){
                     count++;
-                    System.out.println("ELEMENT: " + arr[j] + " REPEATED: " + count);
+                    System.out.println("ELEMENT: " + arr[j] + " REPEATED: " + count+1);
                 } else {
                     count=0;
                 }
@@ -40,7 +41,6 @@ public class ArrayClass {
 
     public static void splitArray(int size, int[] arr){
         //- also accepts a size and splits the array into sub-arrays of that size
-
         System.out.println("Sub Array 1");
         for (int i=0; i < size; i++){
             System.out.println(arr[i]);
@@ -58,7 +58,4 @@ public class ArrayClass {
         repeatedElements(nums);
         splitArray(3, nums);
     }
-
-
-
 }
