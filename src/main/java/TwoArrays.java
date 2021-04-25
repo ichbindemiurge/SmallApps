@@ -20,9 +20,13 @@ public class TwoArrays {
                 }
             }
 
-            if (arr2.length >= arr1.length && arr2.length-i-1 <= 1){
-                int tmp = arr2.length - arr1.length;
-                System.out.println(arr2[tmp-1]);
+            if (arr2.length >= arr1.length){
+                System.out.println(arr1[i]);
+                System.out.println(arr2[arr2.length-i-1]);
+                if(arr2.length-i-1 <= 1){
+                    int tmp = arr2.length - arr1.length;
+                    System.out.println(arr2[tmp-1]);
+                }
             }
         }
     }
@@ -30,7 +34,7 @@ public class TwoArrays {
 
 
     public static void main(String[] args) {
-        int [] nums1 = {1,2,3,4,5};
+        int [] nums1 = {1,2,3};
         int [] nums2 = {6,7,8,9};
         weirdPrint(nums1,nums2);
     }
