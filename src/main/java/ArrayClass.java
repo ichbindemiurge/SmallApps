@@ -1,6 +1,4 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 public class ArrayClass {
 
@@ -12,31 +10,32 @@ public class ArrayClass {
      */
 
     public static void reverseArray(int[] arr){
-        System.out.println("This is normal array:" );
-        for(int i = 0; i <= arr.length - 1; ++i){
-            System.out.println(arr[i]);
+        System.out.println("This is reversed array:" + "\n" );
+        for(int i = 0; i < arr.length/2 ; ++i){
+            int tmp = arr[i];
+            arr[i] = arr[arr.length-i-1];
+            arr[arr.length-i-1] = tmp;
         }
-
-        System.out.println("This is reversed array:" );
-        for(int j=arr.length-1; j >=0; --j) {
-            System.out.println(arr[j]);
-        }
+        System.out.println(Arrays.toString(arr));
+        System.out.println("###################");
     }
 
     public static void repeatedElements(int[] arr){
-      //  - prints every item that is contained in the array more than once and the number of it's occurences
-        int count = 0;
+        //  - prints every item that is contained in the array more than once and the number of it's occurences
+
+        Map<Integer, Integer> reps = new HashMap<>();
+
         System.out.println("----------------------------");
         for(int i=0; i <= arr.length-1; i++){
-            for(int j = i+1; j <= arr.length-1; j++){
-                if(j!=i && arr[i] == arr[j]){
-                    count++;
-                    System.out.println("ELEMENT: " + arr[j] + " REPEATED: " + count);
-                } else {
-                    count=0;
-                }
+            if(reps.containsKey(arr[i])){
+                int count = reps.get(arr[i]);
+                reps.put(arr[i], ++count);
+            } else {
+                reps.put(arr[i], 1);
             }
         }
+        System.out.println(reps);
+        System.out.println("----------------------------");
     }
 
     public static void splitArray(int size, int[] arr){
@@ -53,9 +52,9 @@ public class ArrayClass {
     }
 
     public static void main(String[] args) {
-        int[] nums = {1,1,2,6,7,8,8};
+        int[] nums = {1,4,2,6,4,8,4};
         reverseArray(nums);
         repeatedElements(nums);
-        splitArray(3, nums);
+        //splitArray(3, nums);
     }
 }
