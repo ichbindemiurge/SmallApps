@@ -1,3 +1,4 @@
+
 import java.util.*;
 
 public class ArrayClass {
@@ -41,13 +42,25 @@ public class ArrayClass {
     public static void splitArray(int size, int[] arr){
         //- also accepts a size and splits the array into sub-arrays of that size
         System.out.println("Sub Array 1");
-        for (int i=0; i < size; i++){
-            System.out.println(arr[i]);
+        int [] subArr = new int [size];
+
+        for(int i = 0; i <= arr.length-1; i++){
+            if(i < subArr.length) {
+                subArr[i] = arr[i];
+            }
         }
-        System.out.println("############################");
-        System.out.println("Sub Array 2");
-        for (int j = size; j <= arr.length-1; j++){
-            System.out.println(arr[j]);
+
+        System.out.println(Arrays.toString(subArr));
+
+        if(arr.length > size){
+            int count = 1;
+            System.out.println("Sub Array " + ++count);
+            int tmp = arr.length - subArr.length;
+            int [] newArr = new int[tmp];
+            for(int j = 0; j <= newArr.length-1; j++){
+                newArr[j] = arr[size++];
+            }
+            System.out.println(Arrays.toString(newArr));
         }
     }
 
@@ -55,6 +68,6 @@ public class ArrayClass {
         int[] nums = {1,4,2,6,4,8,4};
         reverseArray(nums);
         repeatedElements(nums);
-        //splitArray(3, nums);
+        splitArray(3, nums);
     }
 }
