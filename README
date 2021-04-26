@@ -1,27 +1,14 @@
-Input: 1,1,2,6,7,8,8
+Input: 1,4,2,6,4,8,4
 
-Output reversed: 8
-                 8
-                 7
-                 6
-                 2
-                 1
-                 1
+Output reversed: [4, 8, 4, 6, 2, 4, 1]
 
-Output of the repeated elements: ELEMENT: 1 REPEATED: 1
-                                 ELEMENT: 8 REPEATED: 1
+Output of the repeated elements: {1=1, 2=1, 4=3, 6=1, 8=1}
 
 
 Output of the splitted array into (size) sub-arrays:   Sub Array 1
-                                                       1
-                                                       1
-                                                       2
-                                                       ############################
+                                                       [4, 8, 4]
                                                        Sub Array 2
-                                                       6
-                                                       7
-                                                       8
-                                                       8
+                                                       [6, 2, 4, 1]
 
 #############################################################################################################################################################
 
